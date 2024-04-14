@@ -1,0 +1,19 @@
+.parentSpinner{
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw;
+    z-index: 9999;
+}
+
+.spinner{
+    
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; 
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+}

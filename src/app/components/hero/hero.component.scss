@@ -1,0 +1,44 @@
+@import "../../../mixins/text";
+
+.hero-container {
+  display: flex;
+  max-width: 1780px;
+  margin: 0 auto;
+  .hero-section {
+    flex: 1;
+    p {
+      padding: 2% 10%;
+      margin: 0;
+      @include paragraph;
+      text-align: center;
+    }
+  }
+  .hero-image {
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-logo {
+    padding-top: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    object-fit: cover
+  }
+  h1 {
+    @include title;
+    padding-top: 2%;
+    text-align: center;
+  }
+
+
+  @media (max-width: 1500px) {
+    .hero-section {
+      &.image-container1 {
+        display: none;
+      }
+    }
+  }
+}

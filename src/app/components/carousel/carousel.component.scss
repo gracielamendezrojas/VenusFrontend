@@ -1,0 +1,49 @@
+@import '../../../mixins/text';
+
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:300vh;
+  width:100vw;
+
+}
+.swiper-container {
+  position:relative;
+  width: 50%;
+}
+.swiper-container > .swiper-slide__content {
+  position:absolute;
+  top:0;
+}
+
+.swiper-slide {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  transform: scale(0.8);
+  object-fit: cover;
+}
+.swiper-slide__content {
+  height: 700px;
+}
+
+.testimony{
+  margin:0;
+}
+
+p{
+  @include paragraph_footer();
+  text-align: center;
+  margin: 0 auto;
+}
+
+.carousel{
+
+  @media (min-width: 540px) {
+    width: 75%;
+
+  }
+}

@@ -1,0 +1,37 @@
+/* Agregar este estilo en tu archivo de estilos CSS */
+.post-content {
+  /* Ajusta según sea necesario */
+  overflow-y: auto; /* Habilitar el desplazamiento vertical si el contenido excede la altura máxima */
+}
+
+/* Agregar este estilo en tu archivo de estilos CSS */
+.contain-image {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 50%;
+}
+.comment-card{
+  text-align: left;
+  width: 100%;
+  margin-bottom: 16px; 
+  transition: .2s ease;
+  border-left: #f25287 8px solid;
+}
+
+.date-comment{
+  color: gray;
+  font-size: small;
+}
+
+.comment-card:hover{
+  box-shadow:
+  1px 1px gainsboro,
+  2px 2px gainsboro,
+  3px 3px gainsboro,
+  4px 4px gainsboro;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+  transition: .2s ease;
+  border-left: #f25287 15px solid;
+  }
+  

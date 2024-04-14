@@ -1,0 +1,90 @@
+<div class="search-bar">
+  <div class="search-container">
+    <div class="button-container">
+      <app-button (click)="sortByPopular()">Más populares</app-button>
+      <span style="margin-left: 3px; margin-right: 3px"></span>
+      <app-button (click)="sortByDate()">Más recientes</app-button>
+    </div>
+    <div class="input-container">
+      <mat-form-field>
+        <mat-icon matPrefix>search</mat-icon>
+        <input class="search-input" matInput (keyup)="onSearch($event)" />
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<div *ngFor="let post of posts" class="card-container">
+  <mat-card class="post-card">
+    <img mat-card-image [src]="post.imageUrl" alt="Post Image" />
+    <mat-card-content>
+      <div class="post-header">
+        <h2>{{ post.subject }}</h2>
+        <h4>{{ post.date }}</h4>
+      </div>
+      <p>{{ getTruncatedContent(post) }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-icon-button
+        *ngIf="login.getUserRole() == 'ADMIN'"
+        (click)="editPostRoute(post.postId)"
+      >
+        <mat-icon fontIcon="edit">edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        (click)="toggleLike(post)"
+        [ngClass]="{ 'red-color': post.likedByLoggedUser }"
+      >
+        <mat-icon>{{
+          post.likedByLoggedUser ? "favorite" : "favorite_border"
+        }}</mat-icon>
+      </button>
+      <h4>{{ post.likeAmount }} likes</h4>
+      <button mat-icon-button (click)="openPost(post)">
+        <mat-icon>open_in_new</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="openComments(post.postId)">
+        <mat-icon> add_circle </mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        *ngIf="login.getUserRole() == 'ADMIN'"
+        (click)="borrarPost(post.postId)"
+      >
+        <mat-icon fontIcon="delete">delete</mat-icon>
+      </button>
+      <span class="time-reading"
+        >Tiempo de lectura: {{ calculateReadingTime(post.content) }} min</span
+      >
+    </mat-card-actions>
+
+    <div
+      class="newCommentbox"
+      *ngIf="addComment == true && opened == post.postId"
+    >
+      <mat-form-field class="commentarea">
+        <mat-label>Escribe tu comentario</mat-label>
+        <textarea matInput [(ngModel)]="newComment"></textarea>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="sendComment(post.postId)"
+        class="button-send"
+      >
+        Guardar
+      </button>
+      <button mat-raised-button (click)="closeComments()">Cancelar</button>
+    </div>
+  </mat-card>
+</div>
+<button
+  class="add-post-button"
+  *ngIf="login.getUserRole() == 'ADMIN'"
+  mat-raised-button
+  (click)="newPostRoute()"
+>
+  +
+</button>

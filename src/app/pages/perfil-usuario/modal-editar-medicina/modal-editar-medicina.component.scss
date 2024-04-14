@@ -1,0 +1,38 @@
+.buttonVenus {
+  border-radius: 4px;
+  background-color: #f25287;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+  border: 1px solid #f25287;
+  cursor: pointer;
+}
+
+.buttonVenus:hover {
+  background-color: #f25287;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.buttonVenus:active {
+  transform: scale(0.95);
+}
+
+.buttonCancel {
+  border-radius: 4px;
+
+  color: black;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.3s;
+
+  cursor: pointer;
+}
+
+.buttonCancel:hover {
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.buttonCancel:active {
+  transform: scale(0.95);
+}

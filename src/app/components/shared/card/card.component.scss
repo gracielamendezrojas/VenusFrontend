@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+  .mat-card {
+    max-width: 100%; /* Ajusta el ancho al 100% en dispositivos más pequeños */
+    margin: 10px; /* Agrega espacio alrededor de la tarjeta en dispositivos más pequeños */
+  }
+}
+
+.mat-card {
+  width: 100%;
+  max-width: 400px; /* Puedes ajustar este valor según tus necesidades */
+  margin: 0 auto;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 20px; /* Añade espacios internos a la tarjeta */
+}

@@ -1,0 +1,5 @@
+<button mat-raised-button color="primary" type="button" (click)="fileInput.click()" class="container">
+    <span>Subir</span>
+    <input #fileInput name="file" matInput type="file" class="file-input" (change)="onFileUploadInput($event)">
+</button>
+  

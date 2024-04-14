@@ -1,0 +1,5 @@
+<mat-form-field class="container">
+  <mat-label>{{name}}</mat-label>
+  <input matInput name={{name}} [ngModel]="ngModel" (change)="onChangeField($event)" placeholder="{{placeholder}}" [formControl]="input" required>
+  <mat-error *ngIf="input.invalid">{{getErrorMessage()}}</mat-error>
+</mat-form-field>

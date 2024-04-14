@@ -1,0 +1,107 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.post-card {
+  width: 50vw;
+  margin: 10px;
+}
+
+.mat-card-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.time-reading {
+  margin-left: auto;
+  color: #757575;
+}
+//
+/* Dentro de tu archivo de estilos CSS */
+.mat-icon-button.active .material-icons {
+  color: #df5583;
+}
+.commentarea {
+  width: 100%;
+}
+.button-send {
+  margin-right: 10px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  h4,
+  h2 {
+    padding: 0 3px;
+  }
+  h4 {
+    color: grey;
+    padding-top: 3px;
+  }
+}
+
+.add-post-button {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  color: white;
+  font-size: 40px;
+  background-color: #f25287;
+  border-radius: 50%;
+  bottom: 20px;
+  right: 20px;
+}
+
+.red-color {
+  color: red;
+}
+
+.search-bar {
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.search-button {
+  margin: 0 15px;
+  background-color: #f25287;
+  color: white;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.input-container {
+  height: 70%;
+}
+
+.search-container {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+}
+
+.search-input {
+  height: 30px;
+  font-size: 20px;
+}
+
+mat-card-actions {
+  display: flex;
+  align-items: flex-end;
+  h4 {
+    color: grey;
+    margin: auto 0;
+  }
+}

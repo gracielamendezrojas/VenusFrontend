@@ -1,0 +1,13 @@
+@import '../../../mixins/text';
+.container{
+  h2{
+    @include title;
+    padding-top: 2%;
+    text-align: center;
+  }
+  p{
+    @include paragraph;
+    padding: 2% 5%;
+    text-align: center;
+  }
+}

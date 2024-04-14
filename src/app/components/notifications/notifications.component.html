@@ -1,0 +1,37 @@
+
+<div class="notiMain">
+    <div class="notiParent" *ngFor="let notification of notificationDataService.notifications">
+        <div class = "notiContainer" *ngIf="!notification.open" style="background-color: #f7d9d9;">
+            <div class="iconWarining">
+                <mat-icon [ngStyle]="{'color':'#df5583'}">
+                    warning
+                </mat-icon>
+            </div>
+
+            <div class="notificationText">
+                <p > |  <time class = "notiTime" datetime="notification.date">{{notification.date}}</time> | {{notification.text}} </p>
+                <hr size="8px">
+            </div>
+            
+            
+
+        </div>
+
+        <div class = "notiContainer" *ngIf="notification.open">           
+            <div class="iconWarining">
+                <mat-icon [ngStyle]="{'color':'#df5583'}">
+                    warning
+                </mat-icon>
+            </div>
+
+            <div class="notificationText">
+                
+                <p > |  <time class = "notiTime" datetime="notification.date">{{notification.date}}</time> | {{notification.text}} </p>
+                <hr size="8px">
+            </div>
+            
+
+        </div>
+
+    </div>
+</div>

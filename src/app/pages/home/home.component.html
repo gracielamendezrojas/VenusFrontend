@@ -1,0 +1,95 @@
+<div class="landing-container">
+  <div class="">
+    <app-hero
+      [image_left]="'assets/LogoVenus.png'"
+      [paragraph_left2]="
+        'Venus te permitirá contar con un amplio control de tu ciclo femenino. ' +
+        'Podrás ingresar tu ciclo menstrual sino también podrás conocer tus días fértiles, ' +
+        'llevar un registro del comportamiento de tus ciclos femeninos, informarte respecto a la salud femenina y mucho más.'
+      "
+      [image_right]="'assets/Woman4.png'"
+    ></app-hero>
+    <div class="venus_explanation">
+      <app-text
+        [title]="'¿Quiénes somos?'"
+        [content]="
+          'Somos una comunidad que se ha enfocado en buscar y ofrecer soluciones alternativas ' +
+          'a la medicina tradicional y basadas en información científica. Hemos estado en el mercado por más de 5 años ofreciendo productos y servicios para todos aquellos ' +
+          'que prefieren utilizar métodos naturales en lugar de químicos y/o sustancias ajenas al cuerpo humano. En Venus te ofrecemos un espacio para ' +
+          'aprender del cuerpo femenino y una forma de cuido consciente y guiado por expertos de la salud con títulos académicos reconocidos a nivel nacional.'
+        "
+      ></app-text>
+    </div>
+    <div class="venus-testimony">
+      <app-text id="testimonies" [title]="'Testimonios'"></app-text>
+      <app-carousel></app-carousel>
+    </div>
+    <app-text
+      id="services"
+      [title]="'Servicios'"
+      [content]="'En esta aplicación podrás encontrar estos servicios y más. '"
+    ></app-text>
+    <div class="venus-services">
+      <app-card
+        *ngFor="let card of cardData"
+        [title]="card.title"
+        [subtitle]="card.subtitle"
+        [image]="card.image"
+      ></app-card>
+    </div>
+    <div id="science" class="venus-science">
+      <app-hero
+        [title]="'Base científica'"
+        [paragraph_left1]="
+          'Para los pronósticos de los días fértiles, Venus utiliza el método científicamente probado y que ha demostrado ser 99.4-99.6% efectivo.'
+        "
+        [paragraph_left2]="
+          'El método sintotérmico puede ser utilizado como método anticonceptivo, así como para aumentar las posibilidades de concebir. ' +
+          'Para lograr su efectividad, se deben monitorear la temperatura de la mujer al despertar y sus flujos cervicales. Cabe mencionar que la relación de la temperatura ' +
+          'con la fertilidad está vinculada a cambios de temperatura cuando se aproxima la ovulación.'
+        "
+        [paragraph_left3]="
+          'Este método tiene múltiples ventajas ya que se basa en dos indicadores lo cual permite una alta precisión, ' +
+          'no tiene efectos secundarios porque es un método natural y no invasivo.' +
+          ' Podrás tener un acercamiento con tu cuerpo y ciclo femenino y te voy a contar un secreto... ¡es gratis!'
+        "
+        [paragraph_left4]="
+          'IMPORTANTE: Debes saber que este método no protege frente a enfermedades de transmisión sexual.'
+        "
+        [image_right]="'assets/SintotermicMethod.png'"
+      ></app-hero>
+    </div>
+    <div id="contact" class="venus_form">
+      <div class="contact-image">
+        <img src="../../../assets/Contact.jpg" />
+      </div>
+      <div class="contact-form">
+        <app-text
+          [title]="'Contacto'"
+          [content]="
+            'Si quieres comunicarte con nosotros, no dudes en escribirnos.'
+          "
+        ></app-text>
+        <form
+          ngNoForm
+          [action]="'https://formspree.io/f/meqbdkge'"
+          method="POST"
+        >
+          <app-input [name]="'Nombre'" [placeholder]="'Ana Sofía'"> </app-input>
+          <app-input
+            [name]="'Apellido'"
+            [placeholder]="'Rodríguez'"
+          ></app-input>
+          <app-input-email></app-input-email>
+          <app-text-area [name]="'Asunto'"></app-text-area>
+          <div class="control-container">
+            <div class="button-container">
+              <app-button [name]="'Enviar'"></app-button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>

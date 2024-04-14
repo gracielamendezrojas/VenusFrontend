@@ -1,0 +1,19 @@
+.iconWarining,
+.notificationText {
+  padding-left: 20px;
+}
+.notiContainer {
+  display: flex;
+  align-items: top;
+  justify-content: top;
+  padding: 3px;
+}
+
+.notiMain{
+    overflow: auto;
+    height: 80vh;
+}
+
+.notiTime{
+  font-weight: bold;
+}

@@ -1,0 +1,26 @@
+@import '../../../mixins/text';
+
+.container_footer{
+  background-color: #F7D9D9;
+  p{
+    @include paragraph_footer;
+    margin: 0;
+  }
+  .footer{
+    background-color: #F7D9D9;
+    margin:0;
+    padding: 0 1%;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  @media (max-width: 600px) {
+    .footer-venus {
+      display: none;
+    }
+  }
+  .homePage{
+    color: gray;
+    
+  }
+}

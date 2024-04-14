@@ -1,0 +1,17 @@
+@import '../../../mixins/text';
+
+.card {
+  max-width: 400px;
+  background-color: #F9F3F3;
+  @include title();
+  mat-card-title{
+    @include title();
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  mat-card-subtitle{
+    @include paragraph();
+  }
+}
+
+

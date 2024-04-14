@@ -1,0 +1,35 @@
+/* login.component.scss */
+.error {
+  border: 1px solid red;
+}
+.full-width {
+  width: 100%;
+}
+
+// removed pink login background color at login page
+// .background {
+//   background-color: #f9f3f3;
+// }
+
+.container {
+  display: flex;
+  margin-top: 3%;
+  justify-content: center;
+}
+
+/* Ajusta el estilo de mat-dialog-actions */
+mat-dialog-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px; /* Ajusta la altura mínima según tus necesidades */
+}
+
+.top {
+  margin-top: 5vw;
+}
+@media (max-width: 768px) {
+  .top {
+    margin-top: 15vw;
+  }
+}

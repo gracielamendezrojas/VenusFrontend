@@ -1,0 +1,27 @@
+<!-- post-dialog.component.html -->
+<div class="post-content">
+  <h2>{{ data.post.subject }}</h2>
+  <img mat-card-image [src]="data.post.imageUrl" alt="Post Image" class="contain-image" />
+
+  <p>{{ data.post.content }}</p>
+</div>
+
+<div class="container container-comment text-center">
+  <h2>Comentarios</h2>
+  <div *ngIf="noComments">
+    <p>No hay comentarios disponibles</p>
+  </div>
+  <div *ngIf="!noComments">
+  <div style="width: 100%; justify-content: center;">
+    <mat-card  class="comment-card"  *ngFor="let comment of commentsArray">
+        <mat-card-content>
+          <div style="display: flex; font-weight: bold;">
+               <h3>{{comment.user_id.name}} (<a style="text-decoration: none;" href="mailto:{{comment.user_id.email}}">{{comment.user_id.email}}</a>) </h3>
+          </div>
+          <p>{{comment.comment}}</p>
+          <p class="date-comment">{{comment.date}}</p>
+       </mat-card-content>
+    </mat-card>
+  </div>
+  </div>
+</div>

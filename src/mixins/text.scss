@@ -1,0 +1,21 @@
+@mixin title{
+  align-content: center;
+  line-height: normal;
+  font-family:Garamond;
+  font-size: xxx-large;
+  font-weight: bold;
+}
+
+@mixin paragraph{
+  align-content: center;
+  font-size: xx-large;
+  line-height: normal;
+  font-family:Garamond;
+}
+
+@mixin paragraph_footer{
+  align-content: center;
+  font-size: x-large;
+  line-height: normal;
+  font-family:Garamond;
+}

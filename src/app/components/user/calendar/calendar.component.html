@@ -1,0 +1,82 @@
+<div class="row text-center" id="calendar">
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div
+        class="btn btn-primary"
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate"
+      >
+        Mes anterior
+      </div>
+      <div
+        class="btn btn-outline-secondary"
+        mwlCalendarToday
+        [(viewDate)]="viewDate"
+      >
+        Mes actual
+      </div>
+      <div
+        class="btn btn-primary"
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate"
+      >
+        Mes próximo
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <h3>{{ viewDate | calendarDate : view + "ViewTitle" : "Es" }}</h3>
+  </div>
+</div>
+
+<div [ngSwitch]="view">
+  <mwl-calendar-month-view
+    (dayClicked)="dayClicked($event.day)"
+    *ngSwitchCase="CalendarView.Month"
+    [viewDate]="viewDate"
+    [events]="events"
+    [locale]="'Es'"
+  >
+    <ng-template #cellTemplate let-day="day" let-events="events">
+      <div class="cal-cell-top" *ngIf="events.length > 0">
+        <div
+          class="cal-event"
+          *ngFor="let event of events"
+          [ngStyle]="{
+            backgroundColor: event.meta?.color,
+            borderColor: event.meta?.color
+          }"
+        ></div>
+      </div>
+    </ng-template>
+  </mwl-calendar-month-view>
+
+  <mwl-calendar-week-view
+    *ngSwitchCase="CalendarView.Week"
+    [viewDate]="viewDate"
+    [events]="events"
+  >
+  </mwl-calendar-week-view>
+
+  <mwl-calendar-day-view
+    *ngSwitchCase="CalendarView.Day"
+    [viewDate]="viewDate"
+    [events]="events"
+  >
+  </mwl-calendar-day-view>
+</div>
+<div style="text-align: center">
+  <p>
+    <br />
+    <b
+      ><span style="color: green">Verde:</span>
+      El día contiene información |
+      <span style="color: red"> Rojo:</span>
+      Día de menstruación | <span style="color: ORANGE"> Anaranjado:</span> Día pronóstico de
+      fertilidad</b
+    >
+  </p>
+</div>

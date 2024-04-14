@@ -1,0 +1,30 @@
+mat-form-field {
+  width: 100%;
+}
+
+.error {
+  border-color: #f25287 !important;
+}
+
+mat-form-field:hover {
+  .mat-form-field-outline {
+    color: #f25287;
+  }
+}
+
+mat-form-field {
+  &:not(:hover).mat-focused {
+    .mat-form-field-outline {
+      color: #f25287;
+    }
+  }
+}
+
+mat-form-field {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+mat-form-field:focus {
+  border-color: #f25287;
+  box-shadow: 0 0 5px rgba(242, 82, 135, 0.7);
+}

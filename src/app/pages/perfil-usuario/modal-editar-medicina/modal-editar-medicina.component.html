@@ -1,0 +1,45 @@
+<div style="text-align: center">
+  <h1 mat-dialog-title>Editar</h1>
+</div>
+<form class="editar-form" (ngSubmit)="formSubmit()">
+  <div style="margin-bottom: 20px">
+    <app-input
+      [label]="'Nombre'"
+      [placeholder]="'Ingrese el nombre de medicamento'"
+      [error]="!medicina.name"
+      errorMessage="El nombre es requerido"
+      [(value)]="medicina.name"
+      [type]="'text'"
+      [hint]="'El nombre del medicamento debe ser válido'"
+    ></app-input>
+  </div>
+
+  <div style="margin-bottom: 20px">
+    <app-input
+      [label]="'Dosis'"
+      [placeholder]="'Ingrese la dosis'"
+      [error]="!medicina.dosis"
+      errorMessage="La dosis es requerido"
+      [(value)]="medicina.dosis"
+      [type]="'text'"
+      [hint]="'El valor de la dosis debe ser válido'"
+    ></app-input>
+  </div>
+  <div>
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Nueva frecuencia</mat-label>
+      <mat-select [(value)]="medicina.frecuencia">
+        <mat-option *ngFor="let frec of frecuencias" [value]="frec">{{
+          frec
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button type="submit" mat-stroked-button class="buttonVenus">
+    Actualizar
+  </button>
+  <span style="margin-left: 3px; margin-right: 3px"></span>
+  <button mat-stroked-button mat-dialog-close class="buttonCancel">
+    Cerrar
+  </button>
+</form>

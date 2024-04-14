@@ -1,0 +1,19 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="hero-container">
+      <div class="hero-section">
+        <h1 *ngIf="title">{{ title }}</h1>
+        <div>
+          <img *ngIf="image_left" class="hero-logo" src="{{ image_left }} " />
+        </div>
+        <p *ngIf="paragraph_left1">{{ paragraph_left1 }}</p>
+        <p *ngIf="paragraph_left2">{{ paragraph_left2 }}</p>
+        <p *ngIf="paragraph_left3">{{ paragraph_left3 }}</p>
+        <p *ngIf="paragraph_left4">{{ paragraph_left4 }}</p>
+      </div>
+      <div class="hero-section image-container1">
+        <img class="hero-image" src="{{ image_right }}" />
+      </div>
+    </div>
+  </div>
+</div>

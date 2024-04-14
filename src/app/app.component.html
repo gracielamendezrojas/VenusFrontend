@@ -1,0 +1,4 @@
+<app-navbar *ngIf="shouldShowNavbar()"></app-navbar>
+<!-- <mat-progress-spinner *ngIf=maskService.isLoading></mat-progress-spinner> -->
+<app-mask-loader *ngIf = "maskService.isLoading"></app-mask-loader>
+<router-outlet></router-outlet>

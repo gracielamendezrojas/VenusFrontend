@@ -1,0 +1,26 @@
+<div class="back-div">
+    <button (click)="navigateToPostPage()" mat-raised-button color="primary" type="button" class="back-container" > < Regresar</button>
+</div>
+<div class="page-container">
+    <form (submit)="submit($event)">
+        <div class="post-container">
+            <div class="container">
+                <div class="image-container">
+                    <div class="image">
+                        <img [src]="previewUrl ? previewUrl:imageUrl" alt="">
+                    </div>
+                    <div class="upload-button">
+                        <app-upload-button [onFileUpload]="onFileUpload"></app-upload-button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <app-input [ngModel]="subject" (onChange)="onChangeSubject($event)" [name]="'Asunto'"></app-input>
+                <app-text-area [ngModel]="content" (onChange)="onChangeContent($event)" [name]="'Contenido'"></app-text-area>
+            </div>
+        </div>
+        <div class="button-container">
+            <app-button [name]="'Guardar'"></app-button>
+        </div>
+    </form>
+</div>

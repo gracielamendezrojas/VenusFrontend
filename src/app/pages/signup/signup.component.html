@@ -1,0 +1,101 @@
+<app-container>
+  <div class="container">
+    <div class="left-section">
+      <div class="image-container">
+        <img
+          src="../../../assets/icon.png"
+          style="
+            box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+              0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+              0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+          "
+        />
+      </div>
+    </div>
+
+    <div>
+      <app-button
+        style="position: absolute; margin-left: 20px; margin-top: 8px"
+        routerLink="/"
+        routerLinkActive="active"
+      >
+        < Regresar
+      </app-button>
+    </div>
+
+    <div
+      class="right-section rcorners1"
+      style="
+        box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+          0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+      "
+    >
+      <div class="text-center" style="padding-top: 25px">
+        <app-title>Crea tu cuenta personal</app-title>
+
+        <form (ngSubmit)="formSubmit()">
+          <app-input
+            [label]="'Nombre'"
+            [placeholder]="'Ingrese su nombre'"
+            [error]="!user.name"
+            errorMessage="El nombre es requerido"
+            [(value)]="user.name"
+            [type]="'text'"
+          ></app-input>
+
+          <app-input
+            [label]="'Apellido'"
+            [placeholder]="'Ingrese su apellido'"
+            [error]="!user.surname"
+            errorMessage="El apellido es requerido"
+            [(value)]="user.surname"
+            [type]="'text'"
+          ></app-input>
+
+          <app-input
+            [label]="'Email'"
+            [placeholder]="'Ingrese su email'"
+            [error]="!user.email"
+            errorMessage="El email es requerido"
+            [(value)]="user.email"
+            [type]="'text'"
+          ></app-input>
+          <app-input
+            [label]="'Telefono'"
+            [placeholder]="'Ingrese su telefono'"
+            [error]="!user.phone"
+            errorMessage="El telefono es requerido"
+            [(value)]="user.phone"
+            [type]="'number'"
+          ></app-input>
+          <app-input
+            [label]="'Contraseña'"
+            [placeholder]="'Ingrese su contraseña'"
+            [error]="!user.password"
+            errorMessage="El contraseña es requerido"
+            [(value)]="user.password"
+            [type]="'password'"
+          ></app-input>
+
+          <div class="container">
+            <div class="vertical-center">
+              <app-button type="submit" class="long-button" [isLong]="true">
+                Registrarme</app-button
+              >
+              <!-- <button
+                mat-raised-button
+                class="full-width-button button-color custom-button"
+                style="width: 250px"
+              >
+                Registrarme
+              </button> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <br /><br /><br />
+  </div>
+</app-container>

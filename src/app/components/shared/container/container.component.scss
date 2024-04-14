@@ -1,0 +1,12 @@
+.container {
+  width: 80%; /* Ancho inicial del contenedor */
+  margin: 0 auto; /* Centrar el contenedor en la página */
+  padding: 20px; /* Agregar un espacio de relleno para mayor legibilidad */
+  box-sizing: border-box; /* Incluir padding y border en el ancho total */
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%; /* Cambiar el ancho al 100% cuando la pantalla sea estrecha */
+  }
+}
